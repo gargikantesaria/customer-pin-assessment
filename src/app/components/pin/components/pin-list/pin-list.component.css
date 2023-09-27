@@ -1,0 +1,80 @@
+/* page title section css: start */
+.pin-list-page .pageTitleName {
+    font-size: 30px;
+    color: #a0a0a0;
+}
+
+/* page title section css: end */
+
+/* add button section css : start */
+.pin-list-page .add-btn {
+    font-size: 16px;
+    padding: 8px 24px;
+    float: right;
+    font-weight: 600;
+    border: 1px solid #38C6EC;
+    color: #a0a0a0;
+}
+
+.pin-list-page .add-btn:hover {
+    background: linear-gradient(91.05deg, #38C6EC 0.87%, #0D9DC5 100.81%);
+    transition: 0.3s ease;
+    color: #FFFFFF;
+}
+
+/* add button section css : end */
+
+/* table view section css : start */
+.pin-list-page .pinListTable .table-hover tbody tr:hover>* {
+    background-color: #f5f5f55c !important;
+    box-shadow: none !important;
+}
+
+.pin-list-page .pinListTable .table thead tr th {
+    border-top: none;
+    border-bottom: 3px solid #f1f1f2;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: left;
+}
+
+.pin-list-page .pinListTable .table th {
+    color: #a0a0a0;
+    font-weight: 600;
+}
+
+.pin-list-page .pinListTable .table td {
+    color: #646464;
+}
+
+.pin-list-page .pinListTable .table th,
+.table td {
+    text-align: left;
+}
+
+.pin-list-page .pinListTable .pin-image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.pin-list-page .pinListTable .pin-title-td {
+    max-width: 60px !important;
+}
+
+.pin-list-page .pinListTable .collaborator-name-td .collaborator-name {
+    margin-bottom: 2px;
+}
+
+.pin-list-page .pinListTable .pin-list-table-body-row {
+    cursor: pointer;
+}
+
+/* table view section css : end */
+
+/* Responsive css */
+@media only screen and (max-width:400px) {
+    .pin-list-page .add-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
