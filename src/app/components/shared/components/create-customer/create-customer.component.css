@@ -103,4 +103,8 @@
     transition: all 0.3s ease;
 }
 
+::ng-deep .create-customer-page .ngx-select__item_active {
+    background-color: #38C6EC !important;
+}
+
 /* form section css : end */
