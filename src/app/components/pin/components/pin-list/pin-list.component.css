@@ -12,12 +12,12 @@
     padding: 8px 24px;
     float: right;
     font-weight: 600;
-    border: 1px solid #38C6EC;
+    border: 1px solid var(--primary-color) !important;
     color: #a0a0a0;
 }
 
 .pin-list-page .add-btn:hover {
-    background: linear-gradient(91.05deg, #38C6EC 0.87%, #0D9DC5 100.81%);
+    background: linear-gradient(91.05deg, var(--primary-color) 0.87%, #0D9DC5 100.81%);
     transition: 0.3s ease;
     color: #FFFFFF;
 }

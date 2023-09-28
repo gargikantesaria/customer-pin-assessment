@@ -68,7 +68,7 @@
 }
 
 .create-customer-page .saveBtn {
-    background: #38C6EC;
+    background: var(--primary-color);
     border-radius: 6px;
     color: #ffffff;
     font-style: normal;
@@ -76,7 +76,7 @@
     font-size: 14px;
     line-height: 18px;
     padding: 8px 40px;
-    border: 1px solid #38C6EC;
+    border: 1px solid var(--primary-color);
 }
 
 .create-customer-page .saveBtn:hover {
@@ -88,23 +88,23 @@
 .create-customer-page .cancelBtn {
     background: transparent;
     border-radius: 6px;
-    color: #38C6EC;
+    color: var(--primary-color);
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
     padding: 8px 40px;
-    border: 1px solid #38C6EC;
+    border: 1px solid var(--primary-color);
 }
 
 .create-customer-page .cancelBtn:hover {
-    background: #38C6EC;
+    background: var(--primary-color);
     color: #ffffff;
     transition: all 0.3s ease;
 }
 
 ::ng-deep .create-customer-page .ngx-select__item_active {
-    background-color: #38C6EC !important;
+    background-color: var(--primary-color) !important;
 }
 
 /* form section css : end */

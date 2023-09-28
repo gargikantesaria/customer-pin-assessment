@@ -80,7 +80,7 @@
 }
 
 .add-pin-page .nv-file-over {
-    border: dotted 3px #38C6EC;
+    border: dotted 3px var(--primary-color);
 }
 
 .add-pin-page .add-pin-input:focus {
@@ -116,7 +116,7 @@
 }
 
 .add-pin-page .saveBtn {
-    background: #38C6EC;
+    background: var(--primary-color);
     border-radius: 6px;
     color: #ffffff;
     font-style: normal;
@@ -124,7 +124,7 @@
     font-size: 14px;
     line-height: 18px;
     padding: 8px 40px;
-    border: 1px solid #38C6EC;
+    border: 1px solid var(--primary-color);
 }
 
 .add-pin-page .saveBtn:hover {
@@ -136,23 +136,28 @@
 .add-pin-page .cancelBtn {
     background: transparent;
     border-radius: 6px;
-    color: #38C6EC;
+    color: var(--primary-color);
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
     padding: 8px 40px;
-    border: 1px solid #38C6EC;
+    border: 1px solid var(--primary-color);
 }
 
 .add-pin-page .cancelBtn:hover {
-    background: #38C6EC;
+    background: var(--primary-color);
     color: #ffffff;
     transition: all 0.3s ease;
 }
 
 ::ng-deep .add-pin-page .ngx-select__item_active {
-    background-color: #38C6EC !important;
+    background-color: var(--primary-color) !important;
+}
+
+.form-check-input:checked {
+    background-color: #38c7ec !important;
+    border-color: var(--primary-color) !important;
 }
 
 /* form section css : end */
