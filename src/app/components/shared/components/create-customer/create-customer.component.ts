@@ -3,6 +3,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from '../../services/shared.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomerData } from '../../models/shared.model';
+import { NotificationService } from '../../services/notification.service';
+import { Constants } from '../../config/constant';
 
 @Component({
   selector: 'app-create-customer',
@@ -17,7 +19,7 @@ export class CreateCustomerComponent implements OnInit {
   displayCountryError: boolean = false;
   displayRegionError: boolean = false;
 
-  constructor(public activeModal: NgbActiveModal, private sharedService: SharedService) {
+  constructor(public activeModal: NgbActiveModal, private sharedService: SharedService, private notificationService: NotificationService) {
     // initialize form
     this.customerForm = new FormGroup({
       'title': new FormControl('', Validators.required),
@@ -82,5 +84,6 @@ export class CreateCustomerComponent implements OnInit {
 
     localStorage.setItem('customerList', JSON.stringify(combinedCustomerList));
     this.closeModal();
+    this.notificationService.showToast(Constants.CUSTOMER_CREATED_SUCCESSFULLY, 'success');
   }
 }

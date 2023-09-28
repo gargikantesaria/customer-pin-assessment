@@ -7,3 +7,8 @@
 .add-modal {
     max-width: 650px;
 }
+
+/* For toast */
+.toast-success {
+    background-color: var(--primary-color) !important;
+}

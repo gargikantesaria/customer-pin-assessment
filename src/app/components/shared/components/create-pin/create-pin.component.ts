@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FileUploader } from 'ng2-file-upload';
+import { NotificationService } from '../../services/notification.service';
+import { Constants } from '../../config/constant';
 @Component({
   selector: 'app-create-pin',
   templateUrl: './create-pin.component.html',
@@ -23,7 +25,7 @@ export class CreatePinComponent implements OnInit {
   collaboratorList: string[] = [];
   displayCollaboratorError: boolean = false;
 
-  constructor(public activeModal: NgbActiveModal) {
+  constructor(public activeModal: NgbActiveModal, private notificationService: NotificationService) {
     this.pinForm = new FormGroup({
       'title': new FormControl('', Validators.required),
       'collaborators': new FormControl([], Validators.required),
@@ -113,5 +115,6 @@ export class CreatePinComponent implements OnInit {
     localStorage.setItem('pinList', JSON.stringify(combinedPinList));
 
     this.closeModal();
+    this.notificationService.showToast(Constants.PIN_CREATED_SUCCESSFULLY, 'success');
   }
 }
