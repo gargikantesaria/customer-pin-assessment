@@ -1,1 +1,49 @@
-<p>create-customer works!</p>
+<div class="create-customer-page container-fluid p-4">
+    <div class="row mb-2">
+        <div class="col-12 d-flex justify-content-between">
+            <!-- Title section -->
+            <div class="page-title">
+                <h4 class="pageTitleName">Create Customer</h4>
+            </div>
+            <button type="button" class="btn-close close-icon-btn" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+    </div>
+    <div class="row py-3">
+        <div class="col-12">
+            <!-- customer form section -->
+            <form [formGroup]="customerForm">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label class="form-label input-field-label">Title<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control customer-form-input" placeholder="Enter Title"
+                            formControlName="title">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label input-field-label">Email<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control customer-form-input" placeholder="Enter email"
+                            formControlName="email">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="form-label input-field-label">Region<span class="text-danger">*</span></label>
+                        <ngx-select [items]="regions" formControlName="region" placeholder="Select region"
+                            (change)="onRegionChange($event)"></ngx-select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label input-field-label">Country<span class="text-danger">*</span></label>
+                        <ngx-select [items]="regionCountries[customerForm.get('region').value]"
+                            formControlName="country" placeholder="Select country"></ngx-select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- button section -->
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary cancelBtn me-3" (click)="closeModal()">Cancel</button>
+            <button type="button" class="btn btn-primary saveBtn">
+                Save
+            </button>
+        </div>
+    </div>
+</div>

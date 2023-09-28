@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { PinListData } from '../../models/pin-list.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CreateCustomerComponent } from 'src/app/components/shared/components/create-customer/create-customer.component';
+import { CreatePinComponent } from 'src/app/components/shared/components/create-pin/create-pin.component';
+declare var $: any;
 
 @Component({
   selector: 'app-pin-list',
@@ -38,7 +42,22 @@ export class PinListComponent {
     }
   ];
 
-  constructor() {
+  constructor(private modalService: NgbModal) { }
 
+  // open modal accordingly
+  openModal(componentName: string) {
+    const modalRef = this.modalService.open(componentName == 'add-pin' ? CreatePinComponent : CreateCustomerComponent, { size: 'lg', centered: true, backdrop: 'static', modalDialogClass: 'add-modal' });
+
+    // Handle modal close event if needed
+    modalRef.result.then(
+      (result) => {
+        console.log(result);
+        // Handle modal close
+      },
+      (reason) => {
+        console.log(reason);
+        // Handle modal dismiss (e.g., when clicking outside the modal)
+      }
+    );
   }
 }

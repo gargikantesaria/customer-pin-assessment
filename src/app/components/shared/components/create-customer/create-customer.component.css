@@ -1,0 +1,106 @@
+/* title section css: start */
+.create-customer-page .pageTitleName {
+    font-size: 30px;
+    color: #a0a0a0;
+}
+
+.create-customer-page .close-icon-btn {
+    margin-top: 8px;
+    box-shadow: none !important;
+    opacity: 0.5 !important;
+}
+
+/* title section css: end */
+
+/* form section css : start */
+.create-customer-page .input-field-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #999999;
+}
+
+.create-customer-page .customer-form-input {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E2F32;
+}
+
+.create-customer-page .customer-form-input::placeholder,
+::ng-deep .ngx-select__placeholder {
+    opacity: 1;
+    /* Firefox */
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    color: #999999 !important;
+}
+
+.create-customer-page .customer-form-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    opacity: 1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+}
+
+.create-customer-page .customer-form-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    opacity: 1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+}
+
+.create-customer-page .customer-form-input:focus {
+    box-shadow: none;
+}
+
+.create-customer-page .saveBtn {
+    background: #38C6EC;
+    border-radius: 6px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 40px;
+    border: 1px solid #38C6EC;
+}
+
+.create-customer-page .saveBtn:hover {
+    border: 1px solid #29aed2;
+    transition: all 0.3s ease;
+    background: #29aed2;
+}
+
+.create-customer-page .cancelBtn {
+    background: transparent;
+    border-radius: 6px;
+    color: #38C6EC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 40px;
+    border: 1px solid #38C6EC;
+}
+
+.create-customer-page .cancelBtn:hover {
+    background: #38C6EC;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* form section css : end */
