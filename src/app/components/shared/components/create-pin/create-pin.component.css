@@ -1,0 +1,154 @@
+/* title section css: start */
+.add-pin-page .pageTitleName {
+    font-size: 30px;
+    color: #a0a0a0;
+}
+
+.add-pin-page .close-icon-btn {
+    margin-top: 8px;
+    box-shadow: none !important;
+    opacity: 0.5 !important;
+}
+
+/* title section css: end */
+
+/* form section css : start */
+.add-pin-page .input-field-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #999999;
+}
+
+.add-pin-page .add-pin-input {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E2F32;
+}
+
+.add-pin-page .add-pin-input::placeholder,
+.add-pin-page .image-upload-placeholder,
+::ng-deep .ngx-select_multiple .ngx-select__search::placeholder {
+    opacity: 1;
+    /* Firefox */
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    color: #999999 !important;
+}
+
+.add-pin-page .add-pin-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    opacity: 1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+}
+
+.add-pin-page .add-pin-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    opacity: 1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+}
+
+.add-pin-page .image-upload-input {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -3px;
+}
+
+.add-pin-page .my-drop-zone {
+    position: relative;
+    border: dotted 3px #ccc;
+    height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+.add-pin-page .nv-file-over {
+    border: dotted 3px #38C6EC;
+}
+
+.add-pin-page .add-pin-input:focus {
+    box-shadow: none;
+}
+
+.add-pin-page .uploaded-image-name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #2E2F32;
+    margin-bottom: 0 !important;
+}
+
+::ng-deep .add-pin-page .ngx-select_multiple {
+    padding: 5px 10px 0 !important;
+    min-height: 38px !important;
+}
+
+
+::ng-deep .add-pin-page .ngx-select__selected-plural {
+    height: 25px !important;
+    font-size: 16px !important;
+}
+
+::ng-deep .ngx-select_multiple .ngx-select__choices {
+    margin-left: -10px !important;
+}
+
+.add-pin-page .radio-input {
+    border: none !important;
+}
+
+.add-pin-page .saveBtn {
+    background: #38C6EC;
+    border-radius: 6px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 40px;
+    border: 1px solid #38C6EC;
+}
+
+.add-pin-page .saveBtn:hover {
+    border: 1px solid #29aed2;
+    transition: all 0.3s ease;
+    background: #29aed2;
+}
+
+.add-pin-page .cancelBtn {
+    background: transparent;
+    border-radius: 6px;
+    color: #38C6EC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 8px 40px;
+    border: 1px solid #38C6EC;
+}
+
+.add-pin-page .cancelBtn:hover {
+    background: #38C6EC;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* form section css : end */
