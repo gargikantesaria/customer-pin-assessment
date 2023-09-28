@@ -40,11 +40,11 @@
                             <tr class="pin-list-table-body-row" *ngFor="let data of pinList">
                                 <td class="text-center pin-title-td">{{data.title}}</td>
                                 <td class="text-center">
-                                    <img [src]="data.image" alt="image" class="img-fluid pin-image">
+                                    <img [src]="data?.image?.url" alt="image" class="img-fluid pin-image">
                                 </td>
                                 <td class="collaborator-name-td text-center">
                                     <p class="collaborator-name" *ngFor="let customer of data?.collaborators">
-                                        {{customer?.name}}
+                                        {{customer}}
                                     </p>
                                 </td>
                                 <td class="text-center">{{data.privacy}}</td>
@@ -54,7 +54,7 @@
                         <tbody *ngIf="pinList?.length == 0">
                             <tr>
                                 <td class="text-center" colspan="4">
-                                    <p class="mb-0">No Data Found</p>
+                                    <p class="mb-0 py-4">No Data Found</p>
                                 </td>
                             </tr>
                         </tbody>

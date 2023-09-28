@@ -1,7 +1,6 @@
 export interface PinListData {
-    pin_id: number;
     title: string;
-    image: string;
+    image: { name: string, url: string };
     collaborators: { id: number, name: string }[];
     privacy: string;
 }

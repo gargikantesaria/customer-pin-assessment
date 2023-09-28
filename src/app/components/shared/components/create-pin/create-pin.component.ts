@@ -18,6 +18,7 @@ export class CreatePinComponent implements OnInit {
   });
   public hasBaseDropZoneOver: boolean = false;
   uploadedImage: { name: string, url: string } | undefined;
+  isFileInputTouched: boolean = false;
 
   collaboratorList: string[] = [];
   displayCollaboratorError: boolean = false;
@@ -31,7 +32,11 @@ export class CreatePinComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // get customer list from localstorage
+    this.getCustomerList();
+  }
+
+  // get customer list
+  getCustomerList() {
     const getCustomers = localStorage.getItem('customerList');
     if (getCustomers) {
       this.collaboratorList = JSON.parse(getCustomers).map(customer => customer['title']);
@@ -47,6 +52,7 @@ export class CreatePinComponent implements OnInit {
 
   // Trigger the hidden file input by clicking it
   openFileUploader() {
+    this.isFileInputTouched = true;
     const fileInput = document.querySelector('.image-upload-input') as HTMLInputElement;
     if (fileInput) {
       fileInput.click();
@@ -59,13 +65,33 @@ export class CreatePinComponent implements OnInit {
   }
 
   // select file
-  public onFileSelected(event: File[]) {
+  public async onFileSelected(event: File[]) {
+    this.isFileInputTouched = false;
     const file: File = event[0];
     this.uploadedImage = {
       name: file.name,
-      url: URL.createObjectURL(file)
+      url: await this.readFileAsBase64(file)
     };
   }
+
+  // convert file to base64
+  readFileAsBase64(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = (e: any) => {
+        const base64String = e.target.result;
+        resolve(base64String);
+      };
+
+      reader.onerror = (error) => {
+        reject(error);
+      };
+
+      reader.readAsDataURL(file);
+    });
+  }
+
 
   // on blur select input : display validation error message accordingly
   onBlurSelectInput() {

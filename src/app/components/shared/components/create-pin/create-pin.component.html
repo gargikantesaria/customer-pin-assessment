@@ -10,7 +10,7 @@
     </div>
     <div class="row py-3">
         <div class="col-12">
-            <!-- customer form section -->
+            <!-- pin form section -->
             <form [formGroup]="pinForm">
                 <div class="row">
                     <div class="col-12 mb-3">
@@ -31,6 +31,9 @@
                             <input type="file" ng2FileSelect [uploader]="uploader" accept="image/*"
                                 (onFileSelected)="onFileSelected($event)" class="invisible image-upload-input" />
                         </div>
+                        <small class="text-danger" *ngIf="isFileInputTouched && !uploader.getNotUploadedItems().length">
+                            Please select image
+                        </small>
                         <p class="uploaded-image-name pt-1">{{ uploadedImage?.name }}</p>
                     </div>
                     <div class="col-12 mb-3">
