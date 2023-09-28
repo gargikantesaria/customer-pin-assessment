@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SharedService } from '../../services/shared.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomerData } from '../../models/shared.model';
 
 @Component({
   selector: 'app-create-customer',
@@ -13,6 +14,8 @@ export class CreateCustomerComponent implements OnInit {
   regions: string[] = [];
   regionCountries: Record<string, string[]> = {};
   customerForm: FormGroup;
+  displayCountryError: boolean = false;
+  displayRegionError: boolean = false;
 
   constructor(public activeModal: NgbActiveModal, private sharedService: SharedService) {
     // initialize form
@@ -62,5 +65,22 @@ export class CreateCustomerComponent implements OnInit {
   onRegionChange(event) {
     // Reset the selected country
     this.customerForm.get('country').setValue('');
+  }
+
+  // on blur select input : display validation error message accordingly
+  onBlurSelectInput(inputName: string) {
+    this.customerForm.get(inputName).invalid ? (inputName === 'region' ? this.displayRegionError = true : this.displayCountryError = true) : '';
+  }
+
+  // save customer
+  saveCustomer() {
+    let combinedCustomerList = [];
+    const existingCustomerList = localStorage.getItem('customerList');
+
+    existingCustomerList ? combinedCustomerList = JSON.parse(existingCustomerList) : '';
+    combinedCustomerList.push(this.customerForm.value);
+
+    localStorage.setItem('customerList', JSON.stringify(combinedCustomerList));
+    this.closeModal();
   }
 }
